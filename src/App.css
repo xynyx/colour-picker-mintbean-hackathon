@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.hex-value {
+  position: relative;
+  margin: auto;
+  padding-top: 75vh;
+  font-size: 3vw;
+
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+#random {
+  font-size: 1.5em;
+  color: whitesmoke;
+}

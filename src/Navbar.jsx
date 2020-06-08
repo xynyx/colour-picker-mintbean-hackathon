@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  Navbar,
-  Form,
-  Button,
-  Nav,
-  FormControl,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Form, Nav, FormControl, NavDropdown } from "react-bootstrap";
 
 const tinycolor = require("tinycolor2");
 
@@ -14,6 +7,7 @@ export default function Settings({
   changeHex,
   changeVariation,
   changeSetting,
+  changeSettingValue,
 }) {
   const handleHexChange = e => {
     e.preventDefault();
@@ -31,8 +25,12 @@ export default function Settings({
 
   const setRandom = () => {
     const randomColor = tinycolor.random().toHexString();
-    console.log("randomColor", randomColor);
     changeHex(randomColor);
+  };
+
+  const handleSettingValueChange = e => {
+    console.log("e", e);
+    changeSettingValue(e);
   };
 
   /*  = [ "e69373", "805240", "e6d5cf", "bf5830" ,
@@ -40,8 +38,7 @@ export default function Settings({
              "557aaa", "405c80", "cfd9e6", "306ebf"  */
   return (
     <div>
-      <Navbar  expand="lg" bg="dark" variant="dark">
-
+      <Navbar expand="lg" bg="dark" variant="dark">
         <Nav className="mr-auto">
           {/* <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#features">Features</Nav.Link>
@@ -49,7 +46,7 @@ export default function Settings({
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
-          <Navbar.Brand href="#home">Colour Palette Generator</Navbar.Brand>
+            <Navbar.Brand>Colour Palette Generator</Navbar.Brand>
             <NavDropdown
               onSelect={e => handleVariationChange(e)}
               title="Variation"
@@ -75,10 +72,12 @@ export default function Settings({
               <NavDropdown.Item eventKey="triad">Triad</NavDropdown.Item>
               <NavDropdown.Item eventKey="tetrad">Tetrad</NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown.Divider />
+
             <Nav.Link
               value={"lighten"}
               eventKey={"lighten"}
-              onClick={(e, data) => changeSettings(e, data)}
+              onClick={(e) => changeSettings(e)}
             >
               Lighten
             </Nav.Link>
@@ -97,10 +96,24 @@ export default function Settings({
             <Nav.Link value={"greyscale"} onClick={e => changeSettings(e)}>
               Greyscale
             </Nav.Link>
-            <Nav.Link onClick={() => setRandom()}>Random</Nav.Link>
+            <NavDropdown
+              onSelect={e => handleSettingValueChange(e)}
+              title="Change Value (%)"
+            >
+              <NavDropdown.Item eventKey="2">10</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4">20</NavDropdown.Item>
+              <NavDropdown.Item eventKey="6">30</NavDropdown.Item>
+              <NavDropdown.Item eventKey="8">40</NavDropdown.Item>
+              <NavDropdown.Item eventKey="12">50</NavDropdown.Item>
+              <NavDropdown.Item eventKey="16">60</NavDropdown.Item>
+              <NavDropdown.Item eventKey="20">70</NavDropdown.Item>
+              <NavDropdown.Item eventKey="30">80</NavDropdown.Item>
+              <NavDropdown.Item eventKey="40">90</NavDropdown.Item>
+              <NavDropdown.Item eventKey="50">100</NavDropdown.Item>
+            </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-
+        <Nav.Link id="random" onClick={() => setRandom()}>Random</Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
           <FormControl type="text" placeholder="#77d36a" className="mr-sm-2" />
         </Form>
@@ -108,5 +121,3 @@ export default function Settings({
     </div>
   );
 }
-
-/*  * adjust - lighten, brighten, darken, desat, sat, greyscale, spin */
