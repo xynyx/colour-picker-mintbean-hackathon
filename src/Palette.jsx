@@ -15,12 +15,11 @@ scheme.from_hue(100); // Start the scheme
 
 // // const colors = scheme.colors().slice(0, 8);
 
-export default function Palette({ hex, variation }) {
+export default function Palette({ hex, variation, setting }) {
   /**
    * TODO
    * color names
    * hex code
-   * variation dropdown - analogous, monochromatic, splitcomplement, triad, tetrad, complement)
    * random
    * adjust - lighten, brighten, darken, desat, sat, greyscale, spin
    */
@@ -49,6 +48,7 @@ export default function Palette({ hex, variation }) {
       colors = tinycolor(hex).complement().toHexString();
       break;
   }
+
 
   let color;
   if (!Array.isArray(colors)) {

@@ -8,16 +8,24 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
-export default function Settings({ changeHex, changeVariation }) {
+export default function Settings({
+  changeHex,
+  changeVariation,
+  changeSetting,
+}) {
   const handleHexChange = e => {
     e.preventDefault();
-    console.log("e", e.target.value);
     changeHex(e.target.value);
   };
 
   const handleVariationChange = variation => {
-    console.log('variation', variation)
-    changeVariation(variation)
+    console.log("variation", variation);
+    changeVariation(variation);
+  };
+
+  const changeSettings = (e, data) => {
+    const setting = e.target.getAttribute("value");
+    changeSetting(setting);
   };
 
   /*  = [ "e69373", "805240", "e6d5cf", "bf5830" ,
@@ -44,7 +52,9 @@ export default function Settings({ changeHex, changeVariation }) {
             </NavDropdown.Item>
             <NavDropdown.Divider />
 
-            <NavDropdown.Item eventKey="complement">Complement</NavDropdown.Item>
+            <NavDropdown.Item eventKey="complement">
+              Complement
+            </NavDropdown.Item>
             <NavDropdown.Item eventKey="splitcomplement">
               Split Complement
             </NavDropdown.Item>
@@ -52,6 +62,28 @@ export default function Settings({ changeHex, changeVariation }) {
             <NavDropdown.Item eventKey="triad">Triad</NavDropdown.Item>
             <NavDropdown.Item eventKey="tetrad">Tetrad</NavDropdown.Item>
           </NavDropdown>
+          <Nav.Link
+            value={"lighten"}
+            eventKey={"lighten"}
+            onClick={(e, data) => changeSettings(e, data)}
+          >
+            Lighten
+          </Nav.Link>
+          <Nav.Link value={"brighten"} onClick={e => changeSettings(e)}>
+            Brighten
+          </Nav.Link>
+          <Nav.Link value={"darken"} onClick={e => changeSettings(e)}>
+            Darken
+          </Nav.Link>
+          <Nav.Link value={"desaturate"} onClick={e => changeSettings(e)}>
+            Desaturate
+          </Nav.Link>
+          <Nav.Link value={"saturate"} onClick={e => changeSettings(e)}>
+            Saturate
+          </Nav.Link>
+          <Nav.Link value={"greyscale"} onClick={e => changeSettings(e)}>
+            Greyscale
+          </Nav.Link>
         </Nav>
 
         <Form onChange={e => handleHexChange(e)} inline>
@@ -61,3 +93,5 @@ export default function Settings({ changeHex, changeVariation }) {
     </div>
   );
 }
+
+/*  * adjust - lighten, brighten, darken, desat, sat, greyscale, spin */

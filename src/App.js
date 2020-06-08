@@ -16,11 +16,12 @@ import Settings from "./Navbar";
 function App() {
   const [hex, changeHex] = useState("#405c80");
   const [variation, changeVariation] = useState("tetrad");
+  const [setting, changeSetting] = useState();
 
   return (
     <div className="App">
-      <Settings changeVariation={changeVariation} changeHex={changeHex} />
-      <Palette variation={variation} hex={hex} />
+      <Settings changeSetting={changeSetting} changeVariation={changeVariation} changeHex={changeHex} />
+      <Palette setting={setting} variation={variation} hex={hex} />
     </div>
   );
 }
