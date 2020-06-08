@@ -14,8 +14,8 @@ import Settings from "./Navbar";
  */
 
 function App() {
-  const [hex, changeHex] = useState("#405c80");
-  const [variation, changeVariation] = useState("tetrad");
+  const [hex, changeHex] = useState("#5f42ad");
+  const [variation, changeVariation] = useState("analogous");
   const [setting, changeSetting] = useState();
 
   return (

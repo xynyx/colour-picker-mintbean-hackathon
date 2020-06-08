@@ -50,7 +50,6 @@ export default function Palette({ hex, variation, setting }) {
   }
 
   const settings = color => {
-    console.log('setting', setting)
     const converter = {
       lighten: tinycolor(color).lighten(1).toString(),
       brighten: tinycolor(color).brighten(1).toString(),
@@ -74,8 +73,7 @@ export default function Palette({ hex, variation, setting }) {
     color = colors.map(function (t) {
       let hexColor = t.toHexString();
       hexColor = settings(hexColor);
-      console.log("hexColor", hexColor);
-      console.log("t", t);
+      // console.log("hexColor", hexColor);
       return <Colors hex={hexColor} />;
       // return <Colors hex={`#${t}`} />
       // return t.toHexString();
