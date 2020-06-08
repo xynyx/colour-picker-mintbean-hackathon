@@ -1,8 +1,7 @@
 .color {
   flex: 1;
   border: 1px solid rgba(0, 0, 0, 0.089);
-  height: 90.95vh
-
+  height: 90.95vh;
 }
 
 #container {

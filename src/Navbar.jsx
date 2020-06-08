@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar, Form, Nav, FormControl, NavDropdown } from "react-bootstrap";
 
 const tinycolor = require("tinycolor2");
@@ -29,13 +29,9 @@ export default function Settings({
   };
 
   const handleSettingValueChange = e => {
-    console.log("e", e);
     changeSettingValue(e);
   };
 
-  /*  = [ "e69373", "805240", "e6d5cf", "bf5830" ,
-             "77d36a", "488040", "d2e6cf", "43bf30" ,
-             "557aaa", "405c80", "cfd9e6", "306ebf"  */
   return (
     <div>
       <Navbar expand="lg" bg="dark" variant="dark">
@@ -77,7 +73,7 @@ export default function Settings({
             <Nav.Link
               value={"lighten"}
               eventKey={"lighten"}
-              onClick={(e) => changeSettings(e)}
+              onClick={e => changeSettings(e)}
             >
               Lighten
             </Nav.Link>
@@ -113,7 +109,9 @@ export default function Settings({
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <Nav.Link id="random" onClick={() => setRandom()}>Random</Nav.Link>
+        <Nav.Link id="random" onClick={() => setRandom()}>
+          Random
+        </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
           <FormControl type="text" placeholder="#77d36a" className="mr-sm-2" />
         </Form>

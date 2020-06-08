@@ -53,7 +53,7 @@ export default function Palette({ hex, variation, setting, settingValue }) {
       let hexColor = t.toHexString();
 
       hexColor = settings(hexColor);
-      
+
       return <Colors hex={hexColor} />;
     });
   }
