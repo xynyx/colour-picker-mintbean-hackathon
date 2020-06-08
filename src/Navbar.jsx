@@ -1,8 +1,16 @@
-import React from "react";
-import { Navbar, Form, Button, Nav, FormControl} from 'react-bootstrap';
+import React, { useState } from "react";
+import { Navbar, Form, Button, Nav, FormControl } from "react-bootstrap";
 
+export default function Settings({ changeHex }) {
+  const handleHexChange = e => {
+    e.preventDefault();
+    console.log("e", e.target.value);
+    changeHex(e.target.value);
+  };
 
-export default function Settings() {
+  /*  = [ "e69373", "805240", "e6d5cf", "bf5830" ,
+             "77d36a", "488040", "d2e6cf", "43bf30" ,
+             "557aaa", "405c80", "cfd9e6", "306ebf"  */
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -12,9 +20,8 @@ export default function Settings() {
           <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
+        <Form onChange={e => handleHexChange(e)} inline>
+          <FormControl type="text" placeholder="#77d36a" className="mr-sm-2" />
         </Form>
       </Navbar>
     </div>

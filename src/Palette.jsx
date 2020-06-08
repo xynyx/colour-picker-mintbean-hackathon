@@ -15,8 +15,12 @@ const tinycolor = require("tinycolor2");scheme.from_hue(100)         // Start th
 // const colors = scheme.colors().slice(0, 8);
 
 
-const colors = tinycolor("#e6d5cf").tetrad();
 
+
+
+
+export default function Palette({hex}) {
+  const colors = tinycolor(hex).tetrad();
   const color = colors.map(function (t) {
     const hexColor = t.toHexString();
     console.log('t', t)
@@ -25,7 +29,7 @@ const colors = tinycolor("#e6d5cf").tetrad();
     // return t.toHexString();
   });
 
-export default function Palette() {
+
 
   return (
     <div id="container">
