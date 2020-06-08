@@ -49,13 +49,31 @@ export default function Palette({ hex, variation, setting }) {
       break;
   }
 
+  const settings = color => {
+    console.log('setting', setting)
+    const converter = {
+      lighten: tinycolor(color).lighten(1).toString(),
+      brighten: tinycolor(color).brighten(1).toString(),
+      darken: tinycolor(color).darken(1).toString(),
+      desaturate: tinycolor(color).desaturate(1).toString(),
+      saturate: tinycolor(color).saturate(1).toString(),
+      greyscale: tinycolor(color).greyscale(1).toString(),
+      undefined: color
+    };
+
+    return converter[setting];
+  };
+
+
+  // console.log('#ff3333', tinycolor("#ff3333").lighten(10).toString())
 
   let color;
   if (!Array.isArray(colors)) {
     return <Colors hex={colors} />;
   } else {
     color = colors.map(function (t) {
-      const hexColor = t.toHexString();
+      let hexColor = t.toHexString();
+      hexColor = settings(hexColor);
       console.log("hexColor", hexColor);
       console.log("t", t);
       return <Colors hex={hexColor} />;

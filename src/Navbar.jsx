@@ -8,6 +8,9 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 
+const tinycolor = require("tinycolor2");
+
+
 export default function Settings({
   changeHex,
   changeVariation,
@@ -27,6 +30,11 @@ export default function Settings({
     const setting = e.target.getAttribute("value");
     changeSetting(setting);
   };
+
+  const setRandom = () => {
+    const randomColor = tinycolor.random().toHexString();
+    changeHex(randomColor);
+  }
 
   /*  = [ "e69373", "805240", "e6d5cf", "bf5830" ,
              "77d36a", "488040", "d2e6cf", "43bf30" ,
@@ -83,6 +91,9 @@ export default function Settings({
           </Nav.Link>
           <Nav.Link value={"greyscale"} onClick={e => changeSettings(e)}>
             Greyscale
+          </Nav.Link>
+          <Nav.Link onClick={() => setRandom()}>
+            Random
           </Nav.Link>
         </Nav>
 
