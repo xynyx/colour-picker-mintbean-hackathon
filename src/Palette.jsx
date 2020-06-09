@@ -6,6 +6,7 @@ const tinycolor = require("tinycolor2");
 
 export default function Palette({ hex, variation, setting, settingValue }) {
   let colors;
+  // Using a switch to set variation type set
   switch (variation) {
     case "tetrad":
       colors = tinycolor(hex).tetrad();
@@ -30,8 +31,8 @@ export default function Palette({ hex, variation, setting, settingValue }) {
       break;
   }
 
+  // Using a dictionary object to set setting
   const settings = color => {
-    console.log("setting", setting);
     const converter = {
       lighten: tinycolor(color).lighten(settingValue).toString(),
       brighten: tinycolor(color).brighten(settingValue).toString(),
@@ -45,11 +46,11 @@ export default function Palette({ hex, variation, setting, settingValue }) {
     return converter[setting];
   };
 
-  let color;
+  let colorPalette;
   if (!Array.isArray(colors)) {
     return <Colors hex={colors} />;
   } else {
-    color = colors.map(function (t) {
+    colorPalette = colors.map(t => {
       let hexColor = t.toHexString();
 
       hexColor = settings(hexColor);
@@ -58,5 +59,5 @@ export default function Palette({ hex, variation, setting, settingValue }) {
     });
   }
 
-  return <div id="container">{color}</div>;
+  return <div id="container">{colorPalette}</div>;
 }

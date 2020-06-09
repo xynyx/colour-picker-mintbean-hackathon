@@ -18,7 +18,7 @@ export default function Settings({
     changeVariation(variation);
   };
 
-  const changeSettings = (e, data) => {
+  const changeSettings = e => {
     const setting = e.target.getAttribute("value");
     changeSetting(setting);
   };
@@ -36,9 +36,6 @@ export default function Settings({
     <div>
       <Navbar expand="lg" bg="dark" variant="dark">
         <Nav className="mr-auto">
-          {/* <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link> */}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -109,7 +106,7 @@ export default function Settings({
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <Nav.Link id="random" onClick={() => setRandom()}>
+        <Nav.Link id="random" onClick={setRandom()}>
           Random
         </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>

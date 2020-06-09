@@ -4,8 +4,8 @@ Mintbean Hackathon - 06 / 08 / 20
 
 ## About the Project
 
-![]()
-![]()
+![Palette Generator](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/screenshot.png)
+![First Place](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/me.jpeg)
 
 Goal was to create a colour palette generator in 4 hours or less. 
 

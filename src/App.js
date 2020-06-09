@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Palette from "./Palette";
 import Settings from "./Navbar";
