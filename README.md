@@ -4,7 +4,7 @@ Mintbean Hackathon - 06 / 08 / 20
 
 ## About the Project
 
-Goal was to create a colour palette generator in 4 hours or less. 
+Goal was to create a color palette generator in 4 hours or less. 
 
 I placed first! :tada:
 

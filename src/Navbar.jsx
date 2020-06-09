@@ -39,7 +39,7 @@ export default function Settings({
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Navbar.Brand>Colour Palette Generator</Navbar.Brand>
+            <Navbar.Brand>Color Palette Generator</Navbar.Brand>
             <NavDropdown
               onSelect={e => handleVariationChange(e)}
               title="Variation"
