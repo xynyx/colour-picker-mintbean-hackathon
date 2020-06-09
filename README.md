@@ -8,7 +8,7 @@ Goal was to create a color palette generator in 4 hours or less.
 
 I placed first! :tada:
 
-See the project [here](https://suave-colors.netlify.app/)
+See the project [here](https://5edede9ee1b44c0007822d3e--heuristic-williams-fba968.netlify.app/)
 
 ![Palette Generator](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/screenshot.png)
 ![First Place](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/me.jpeg)
