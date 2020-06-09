@@ -18,9 +18,9 @@ See the project [here](https://5ede9d008fa4b20007a4a557--heuristic-williams-fba9
 - TinyColor
 
 ## Resources
--[Hackathon Winner Post](https://www.linkedin.com/posts/mintbean_careerhack-hackathons-careerhack-activity-6675885447970906112-Qe7W);
+- [Hackathon Winner Post](https://www.linkedin.com/posts/mintbean_careerhack-hackathons-careerhack-activity-6675885447970906112-Qe7W)
 
 ## Acknowledgements
--[Mintbean Hackathon](https://www.mintbean.io/);
+- [Mintbean Hackathon](https://www.mintbean.io/)
 
 
