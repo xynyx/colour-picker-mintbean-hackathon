@@ -106,7 +106,7 @@ export default function Settings({
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <Nav.Link id="random" onClick={setRandom()}>
+        <Nav.Link id="random" onClick={() => setRandom()}>
           Random
         </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
