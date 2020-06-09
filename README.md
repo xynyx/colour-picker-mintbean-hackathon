@@ -4,14 +4,14 @@ Mintbean Hackathon - 06 / 08 / 20
 
 ## About the Project
 
-![Palette Generator](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/screenshot.png)
-![First Place](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/me.jpeg)
-
 Goal was to create a colour palette generator in 4 hours or less. 
 
 I placed first! :tada:
 
 See the project [here](https://5ede9d008fa4b20007a4a557--heuristic-williams-fba968.netlify.app/)
+
+![Palette Generator](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/screenshot.png)
+![First Place](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/me.jpeg)
 
 ## Built With
 - React
