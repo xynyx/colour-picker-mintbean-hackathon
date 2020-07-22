@@ -41,7 +41,7 @@ export default function Settings({
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Navbar.Brand>Color Palette Generator</Navbar.Brand>
+            <Navbar.Brand>Colors</Navbar.Brand>
             <NavDropdown
               onSelect={e => handleVariationChange(e)}
               title="Variation"
@@ -57,9 +57,6 @@ export default function Settings({
               </NavDropdown.Item>
               <NavDropdown.Divider />
 
-              <NavDropdown.Item eventKey="complement">
-                Complement
-              </NavDropdown.Item>
               <NavDropdown.Item eventKey="splitcomplement">
                 Split Complement
               </NavDropdown.Item>
@@ -111,14 +108,6 @@ export default function Settings({
         <Nav.Link id="random" onClick={() => setRandom()}>
           Random
         </Nav.Link>
-        <Form onChange={e => handleHexChange(e)} inline>
-        <Form.Group controlId="formColorInput">
-         <Form.Label>Choose a color</Form.Label>
-          <Form.Control type="text" placeholder="#77d36a" className="mr-sm-2" />
-          
-          </Form.Group>
-        </Form>
-
       </Navbar>
     </div>
   );

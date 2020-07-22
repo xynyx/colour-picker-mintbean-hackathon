@@ -1,33 +1,33 @@
-import React from "react";
-import Colors from "./Colors";
-import "./Palette.css";
+import React from 'react';
+import Colors from './Colors';
+import './Palette.css';
 
-const tinycolor = require("tinycolor2");
+const tinycolor = require('tinycolor2');
 
 export default function Palette({ hex, variation, setting, settingValue }) {
   let colors;
   // Using a switch to set variation type set
   switch (variation) {
-    case "tetrad":
+    case 'tetrad':
       colors = tinycolor(hex).tetrad();
       break;
-    case "analogous":
+    case 'analogous':
       colors = tinycolor(hex).analogous();
       break;
-    case "monochromatic":
+    case 'monochromatic':
       colors = tinycolor(hex).monochromatic();
       break;
-    case "splitcomplement":
+    case 'splitcomplement':
       colors = tinycolor(hex).splitcomplement();
       break;
-    case "triad":
+    case 'triad':
       colors = tinycolor(hex).triad();
       break;
-    case "tetrad":
-      colors = tinycolor(hex).tetrad();
-      break;
-    case "complement":
+    case 'complement':
       colors = tinycolor(hex).complement().toHexString();
+      break;
+    default:
+      colors = tinycolor(hex).tetrad();
       break;
   }
 
@@ -52,12 +52,10 @@ export default function Palette({ hex, variation, setting, settingValue }) {
   } else {
     colorPalette = colors.map(t => {
       let hexColor = t.toHexString();
-
       hexColor = settings(hexColor);
-
       return <Colors hex={hexColor} />;
     });
   }
 
-  return <div id="container">{colorPalette}</div>;
+  return <div id='container'>{colorPalette}</div>;
 }

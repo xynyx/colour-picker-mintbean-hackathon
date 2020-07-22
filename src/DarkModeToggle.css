@@ -1,0 +1,21 @@
+.DarkModeToggle {
+  display: flex;
+  margin: 0 1rem 0 auto;
+}
+.DarkModeToggle > button {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  color: #ffe600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.DarkModeToggle > button:last-child
+ {
+  color: #666;
+ }
+
+ .DarkModeToggle > button:focus {
+  outline: none;
+}
