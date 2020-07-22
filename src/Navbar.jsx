@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Form, Nav, FormControl, NavDropdown } from "react-bootstrap";
 
+
 const tinycolor = require("tinycolor2");
 
 export default function Settings({
