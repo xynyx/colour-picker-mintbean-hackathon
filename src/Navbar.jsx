@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Form, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import ColorPicker from '@radial-color-picker/react-color-picker';
 import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
 
@@ -11,10 +11,6 @@ export default function Settings({
   changeSetting,
   changeSettingValue,
 }) {
-  const handleHexChange = e => {
-    e.preventDefault();
-    changeHex(e.target.value);
-  };
 
   const handleVariationChange = variation => {
     changeVariation(variation);
@@ -50,12 +46,10 @@ export default function Settings({
               <NavDropdown.Item eventKey="analogous">
                 Analogous
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-
               <NavDropdown.Item eventKey="monochromatic">
                 Monochromatic
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+
 
               <NavDropdown.Item eventKey="splitcomplement">
                 Split Complement
@@ -105,9 +99,6 @@ export default function Settings({
             </NavDropdown>
           </Navbar.Collapse>
         </Nav>
-        <Nav.Link id="random" onClick={() => setRandom()}>
-          Random
-        </Nav.Link>
       </Navbar>
     </div>
   );

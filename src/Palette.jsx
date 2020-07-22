@@ -30,7 +30,6 @@ export default function Palette({ hex, variation, setting, settingValue }) {
       colors = tinycolor(hex).tetrad();
       break;
   }
-
   // Using a dictionary object to set setting
   const settings = color => {
     const converter = {

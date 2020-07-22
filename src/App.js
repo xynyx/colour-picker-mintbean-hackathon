@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <div className="Interface">
-      <ColorPicker {...color} onInput={onInput} initiallyCollapsed={true} />
+        <ColorPicker {...color} onInput={onInput} initiallyCollapsed={true} />
         <Settings
           changeSetting={changeSetting}
           changeVariation={changeVariation}
