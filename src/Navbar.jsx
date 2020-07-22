@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Form, Nav, FormControl, NavDropdown } from "react-bootstrap";
-
+import { Navbar, Form, Nav, NavDropdown } from "react-bootstrap";
+import ColorPicker from '@radial-color-picker/react-color-picker';
+import '@radial-color-picker/react-color-picker/dist/react-color-picker.min.css';
 
 const tinycolor = require("tinycolor2");
 
@@ -111,8 +112,13 @@ export default function Settings({
           Random
         </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
-          <FormControl type="text" placeholder="#77d36a" className="mr-sm-2" />
+        <Form.Group controlId="formColorInput">
+         <Form.Label>Choose a color</Form.Label>
+          <Form.Control type="text" placeholder="#77d36a" className="mr-sm-2" />
+          
+          </Form.Group>
         </Form>
+
       </Navbar>
     </div>
   );
